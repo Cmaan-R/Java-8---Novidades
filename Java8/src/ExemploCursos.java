@@ -34,25 +34,18 @@ public class ExemploCursos {
 
 		cursos.sort(Comparator.comparingInt(Curso::getAlunos));
 
-		OptionalDouble media = cursos.stream()
-		.filter(c -> c.getAlunos() >= 100)
-		.mapToInt(Curso::getAlunos)
-		.average();
-		
+		OptionalDouble media = cursos.stream().filter(c -> c.getAlunos() >= 100).mapToInt(Curso::getAlunos).average();
+
 //		System.out.println(sum);
-		
+
 //		cursos.stream()
 //			.filter(c -> c.getAlunos() >= 100)
 //			.findAny()
 //			.ifPresent(c -> System.out.println(c.getNome()));
-		
-		cursos.stream()
-		.filter(c -> c.getAlunos() >= 100)
-		.collect(Collectors.toMap(
-				c -> c.getNome(),
-				c -> c.getAlunos()))
-		.forEach((nome, aluno) -> System.out.println(nome + " tem " + aluno + " alunos"));
-		
+
+		cursos.stream().filter(c -> c.getAlunos() >= 100)
+				.collect(Collectors.toMap(c -> c.getNome(), c -> c.getAlunos()))
+				.forEach((nome, aluno) -> System.out.println(nome + " tem " + aluno + " alunos"));
 	}
 
 }
