@@ -29,7 +29,7 @@ public class ExemploCursos {
 		cursos.add(new Curso("Java 8", 113));
 		cursos.add(new Curso("C", 55));
 
-		cursos.sort(Comparator.comparing(Curso::getAlunos));
+		cursos.sort(Comparator.comparingInt(Curso::getAlunos));
 
 		int sum = cursos.stream()
 		.filter(c -> c.getAlunos() >= 100)
