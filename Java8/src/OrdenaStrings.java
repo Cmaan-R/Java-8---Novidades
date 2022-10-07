@@ -19,7 +19,7 @@ public class OrdenaStrings {
 		palavras.sort(Comparator.comparing(String::length));
 
 		Function<String, Integer> funcao = String::length;
-		Function<String, Integer> funcao2 = String::length;
+//		Function<String, Integer> funcao2 = String::length;
 
 		Comparator<String> comparator = Comparator.comparing(funcao);
 		palavras.sort(comparator);
